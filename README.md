@@ -5,6 +5,32 @@
 2020-07-03 Left off at creating offline CSV-reading functionality
 
 
+### HOW TO TURN ON ONCE YOU'VE SETUP ###
+
+# get into the main dir 
+
+cd ~../stock_analysis
+
+# if you're using venv
+
+source bin/activate
+
+# re-upgrade / install the pip libs
+# after creating the setup bash and chmod 755 file.sh
+
+./bashsetup.sh
+
+# get into the git folder if required
+
+cd stock_analysis
+
+# start jupyter lab
+
+
+jupyter lab
+
+# run the workflow ipynb
+
 ### BELOW IS THE SETUP ###
 
 # the following shows how to set this up on an empty linux / unix system
@@ -42,15 +68,5 @@ cd stock_analysis
 
 mkdir stock_files
 mkdir stock_graphs
-
-# install the pip libs
-# after creating the setup bash and chmod 755 file.sh
-
-./bashsetup.sh
-
-# start jupyter lab
-
-jupyter lab
-
 
 

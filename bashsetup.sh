@@ -11,4 +11,5 @@ pip3 install seaborn --upgrade
 pip3 install pandas --upgrade
 pip3 install yahoofinancials --upgrade
 pip3 install sklearn --upgrade
+pip3 install tensorflow --upgrade
 pip3 install keras --upgrade
