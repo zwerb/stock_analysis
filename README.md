@@ -1,5 +1,7 @@
 ### WORK LOG ###
 
+2020-07-04 Left off ready to iterate on processing offline csvs for ML prep
+
 2020-07-03 Left off at creating offline CSV-reading functionality
 
 
