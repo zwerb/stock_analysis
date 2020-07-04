@@ -7,10 +7,7 @@
 
 ### BELOW IS THE SETUP ###
 
-
-# stock_analysis
 # the following shows how to set this up on an empty linux / unix system
-
 # get pip
 
 sudo easy_install pip
