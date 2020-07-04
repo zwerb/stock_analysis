@@ -1,3 +1,11 @@
+### WORK LOG ###
+
+2020-07-03 Left off at creating offline CSV-reading functionality
+
+
+### BELOW IS THE SETUP ###
+
+
 # stock_analysis
 # the following shows how to set this up on an empty linux / unix system
 
