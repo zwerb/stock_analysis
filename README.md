@@ -37,11 +37,13 @@ jupyter lab
 
 ### run the workflow ipynb
 
-# HOW TO SETUP ENVIRONMENT FROM START
+## How to setup the environment from scratch
 
 ### make the project folder
 
+```
 mkdir stock_analysis
+```
 
 ### get pip (if needed)
 
