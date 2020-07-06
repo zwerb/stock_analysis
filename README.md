@@ -4,7 +4,7 @@ Experimentation with python, jupter lab, pandas, numpy, keras, github
 
 ## Latest Work Log
 
-* 2020-07-05 Found out my AWS account had running endpoint for the last 67 hours at $0.28/hr
+* 2020-07-05 Found out my AWS account had running endpoint for the last 67 hours at $0.28/hr, scratch that 93 hours
 
 * 2020-07-04 Left off ready to start to scale data and format for input into NN
 
