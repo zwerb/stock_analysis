@@ -7,11 +7,13 @@ from sklearn.preprocessing import MinMaxScaler
 from keras.models import Sequential
 from keras.layers import Dense, LSTM
 import matplotlib.pyplot as plt
-plt.style.use('fivethirtyeight')#
+#plt.style.use('fivethirtyeight')#
 
 DATADIR = 'stock_files'
 GRAPHDIR = '../html/images/stock_graphs/'
 SPLITSDIR = 'split_files'
+
+plt.style.use('seaborn-whitegrid')
 
 import sa_functions as sa
 
