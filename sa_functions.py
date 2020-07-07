@@ -1,3 +1,44 @@
+#Import Libraries
+
+import sys
+print("Python version")
+print (sys.version)
+print("Version info.")
+print (sys.version_info)
+
+
+import pandas as pd
+import numpy as np
+import re
+import yfinance as yf
+from yahoofinancials import YahooFinancials
+from datetime import datetime, timedelta
+import matplotlib.pyplot as plt
+from os import listdir
+import os
+from os.path import isfile, join
+
+import csv
+import json
+
+from sklearn.preprocessing import MinMaxScaler
+from keras.models import Sequential
+from keras.layers import Dense, LSTM, Dropout, GRU, Bidirectional
+from keras.optimizers import SGD
+import math
+from sklearn.metrics import mean_squared_error
+
+import importlib
+
+plt.style.use('seaborn-whitegrid')
+
+
+### Begin Functions definitions
+
+
+def hello_world(my_name):
+    print("Hello, "+myName+" World!")
+
 def return_rmse(test,predicted):
     rmse = math.sqrt(mean_squared_error(test, predicted))
     print("The root mean squared error is {}.".format(rmse))
@@ -67,7 +108,6 @@ def print_sma_chart_days(stock_ticker, stock_pd, nDays):
     save_graph_to_date_dir(stock_ticker, 'SMA', nDays, dt_previous, dt_latest)
     plt.show()
     
-    
 def print_split_chart(stock_ticker, stock_pd, nDaysTotal, nDaysSplit):
     dt_latest = stock_pd.iloc[-1:].index[0]
     if isinstance(dt_latest, str):
@@ -104,7 +144,7 @@ def first_stock_date(stock_pd):
 def save_dataframe_as_csv(stock_pd,stock_ticker):
     dt_str_first_date = stock_pd.iloc[0:].index[0].strftime("%Y-%m-%d")
     dt_str_latest_date = stock_pd.iloc[-1:].index[0].strftime("%Y-%m-%d")
-    stock_file_name = stock_ticker+"_"+dt_str_first_date+"_"+dt_str_latest_date+".csv"
+    stock_file_name = stock_ticker+"_"+dt_str_latest_date+"_"+dt_str_first_date+".csv"
     try:
         path_ts = os.path.join(DATADIR,dt_str_latest_date)
         if not os.path.exists(path_ts):
@@ -119,6 +159,15 @@ def convert_df_to_pd(stock_df):
     return stock_pd
 
 def online_process_stock_once(stock_ticker,nDays):
+    stock_df = yf.download(stock_ticker)
+    stock_pd = convert_df_to_pd(stock_df)
+    stock_pd = enrich_stock_with_smas(stock_pd)
+    stock_pd = enrich_stock_with_bbs(stock_pd)
+    save_dataframe_as_csv(stock_pd,stock_ticker)
+    #print(stock_ticker)
+    print_sma_chart_days(stock_ticker,stock_pd,nDays)
+    
+def online_process_stock_once_WEB(stock_ticker,nDays):
     stock_df = yf.download(stock_ticker)
     stock_pd = convert_df_to_pd(stock_df)
     stock_pd = enrich_stock_with_smas(stock_pd)
@@ -226,3 +275,5 @@ def lagging(df, lag, time_index):
     plt.title("Prediction with Lag")
     plt.plot(df_true)
     plt.plot(df_pred_lag)
+    
+print("compiled: ",__name__)
