@@ -15,6 +15,6 @@ SPLITSDIR = 'split_files'
 
 import sa_functions as sa
 
-ticker = raw_input("Type a ticker: ")
-days_range = raw_input("Input days: ") 
+ticker = input("Type a ticker: ")
+days_range = input("Input days: ") 
 sa.online_process_stock_once(str(ticker), int(days_range))
