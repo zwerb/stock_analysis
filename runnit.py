@@ -13,7 +13,7 @@ DATADIR = 'stock_files'
 GRAPHDIR = '../html/images/stock_graphs/'
 SPLITSDIR = 'split_files'
 
-import sa_functions
+import sa_functions as sa
 
 
-online_process_stock_once('TSLA', 365)
+sa.online_process_stock_once('TSLA', 365)
