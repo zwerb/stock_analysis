@@ -22,13 +22,17 @@ import csv
 import json
 
 from sklearn.preprocessing import MinMaxScaler
-from keras.models import Sequential
-from keras.layers import Dense, LSTM, Dropout, GRU, Bidirectional
-from keras.optimizers import SGD
+#from keras.models import Sequential
+#from keras.layers import Dense, LSTM, Dropout, GRU, Bidirectional
+#from keras.optimizers import SGD
 import math
 from sklearn.metrics import mean_squared_error
 
 import importlib
+
+DATADIR = 'stock_files'
+GRAPHDIR = '../html/images/stock_graphs/'
+SPLITSDIR = 'split_files'
 
 plt.style.use('seaborn-whitegrid')
 
