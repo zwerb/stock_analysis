@@ -15,5 +15,4 @@ SPLITSDIR = 'split_files'
 
 import sa_functions as sa
 
-
-sa.online_process_stock_once('TSLA', 365)
+sa.online_process_stock_once('TSLA', 120)
