@@ -31,7 +31,7 @@ from sklearn.metrics import mean_squared_error
 import importlib
 
 DATADIR = 'stock_files'
-#GRAPHDIR = '../html/images/stock_graphs/'
+GRAPHDIR = '../images/stock_graphs/'
 SPLITSDIR = 'split_files'
 
 plt.style.use('seaborn-whitegrid')
@@ -79,7 +79,7 @@ def get_previous_date(dt_latest,nDays):
 
 #usage: save_graph_to_date_dir('TSLA', 'SMA', 90, datetime('2020-04-02'), datetime('2020-07-01') )
 def save_graph_to_date_dir(stock_ticker, graph_type, nDays, dt_previous, dt_latest):
-    stock_graph_name = stock_ticker+"_"+graph_type+"_"+str(nDays)+"_"+dt_previous.strftime("%Y-%m-%d")+"_"+dt_latest.strftime("%Y-%m-%d")
+    stock_graph_name = stock_ticker+"_"+graph_type+"_"+str(nDays)+"_"+dt_latest.strftime("%Y-%m-%d")+"_"+dt_previous.strftime("%Y-%m-%d")
     dt_str_latest_date = dt_latest.strftime("%Y-%m-%d")
     path_ts = os.path.join(GRAPHDIR,dt_str_latest_date)
     try:
