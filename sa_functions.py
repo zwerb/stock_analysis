@@ -31,7 +31,7 @@ from sklearn.metrics import mean_squared_error
 import importlib
 
 DATADIR = 'stock_files'
-GRAPHDIR = '../html/images/stock_graphs/'
+#GRAPHDIR = '../html/images/stock_graphs/'
 SPLITSDIR = 'split_files'
 
 plt.style.use('seaborn-whitegrid')
