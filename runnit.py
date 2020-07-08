@@ -9,6 +9,8 @@ from keras.layers import Dense, LSTM
 import matplotlib.pyplot as plt
 #plt.style.use('fivethirtyeight')#
 
+import sys
+
 DATADIR = 'stock_files'
 GRAPHDIR = '../html/images/stock_graphs/'
 SPLITSDIR = 'split_files'
@@ -17,6 +19,11 @@ plt.style.use('seaborn-whitegrid')
 
 import sa_functions as sa
 
-ticker = input("Type a ticker: ")
-days_range = input("Input days: ") 
-sa.online_process_stock_once(str(ticker), int(days_range))
+if len(sys.argv) == 3:
+    ticker = sys.argv[1]
+    days_range = sys.argv[2]
+    sa.online_process_stock_once(str(ticker), int(days_range))
+else:
+    print ('invalid number of args. argv=[{}]'.format(str(sys.argv)))
+    #ticker = input("Type a ticker: ")
+    #days_range = input("Input days: ") 
